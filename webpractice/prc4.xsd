@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XSLSchema">
+<xs:element name="receipebook">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="book" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="title" type="xs:string"/>
+<xs:element name="ingredient" type="xs:string"/>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ul">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="li" type="xs:string" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="quantity" type="xs:integer" use="optional"/>
+<xs:attribute name="unit" type="xs:string" use="optional"/>
+</xs:complexType>
+</xs:sequence>
+<xs:element name="instruction" minOccurs="1">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ul">
+<complexType>
+<xs:sequence>
+<xs:element name="li" type="xs:string" maxOccurs="unbounded">
+</xs:element>
+</xs:sequence>
+</complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

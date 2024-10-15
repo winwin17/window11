@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Service component2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp5" ng-controller="myctrl5">
+<p>{{result}}</p>
+</div>
+
+<script>
+var app=angular.module("myapp5",[]);
+
+app.factory("myfact",function(){
+var obj={};
+obj.getans=function()
+{
+    return "kanika";
+};
+return obj;
+});
+
+app.controller("myctrl5",function($scope,myfact){
+   $scope.result=myfact.getans();
+});
+</script>
+</body>
+</html>

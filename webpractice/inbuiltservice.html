@@ -1,0 +1,17 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp1" ng-controller="myctrl">
+<label>{{myurl}}</label>
+</body>
+<script>
+var app=angular.module('myapp1',[]);
+app.controller('myctrl',function($scope,$location){
+$scope.myurl=$location.absUrl();
+});
+
+</script>
+
+
+</html>

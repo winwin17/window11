@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE library [
+<!ELEMENT library (book+, member+)>
+<!ATTLIST library 
+    name CDATA #REQUIRED
+    established CDATA #REQUIRED
+    location CDATA #REQUIRED>
+<!ELEMENT book (title, year, price, publisher)>
+<!ATTLIST book 
+    isbn CDATA #REQUIRED
+    author CDATA #REQUIRED
+    genre CDATA #REQUIRED
+    available (true|false) #IMPLIED
+    edition CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price 
+    currency CDATA #REQUIRED>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST publisher 
+    country CDATA #REQUIRED>
+<!ELEMENT member (borrowedBooks?)>
+<!ATTLIST member 
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    membership (gold|silver|bronze) #REQUIRED
+    active (true|false) #REQUIRED
+    joindate CDATA #REQUIRED>
+<!ELEMENT borrowedBooks (bookref+)>
+<!ELEMENT bookref EMPTY>
+<!ATTLIST bookref 
+    isbn CDATA #REQUIRED>
+]>
+<library name="City Central Library" established="1950" location="Downtown">
+    <book isbn="978-3-16-148410-0" author="John Doe" genre="Fiction" available="true" edition="3rd">
+        <title>The Great Adventure</title>
+        <year>2020</year>
+        <price currency="USD">19.99</price>
+        <publisher country="USA">Global Publishers</publisher>
+    </book>
+    <book isbn="978-0-12-345678-9" author="Jane Smith" genre="Science" available="false">
+        <title>The Science of Everything</title>
+        <year>2018</year>
+        <price currency="EUR">29.99</price>
+        <publisher country="Germany">EuroPress</publisher>
+    </book>
+
+    <member id="12345" name="Alice Johnson" membership="gold" active="true" joindate="2015-06-15">
+        <borrowedBooks>
+            <bookref isbn="978-3-16-148410-0"/>
+        </borrowedBooks>
+    </member>
+
+    <member id="67890" name="Bob Miller" membership="silver" active="false" joindate="2019-08-22"/>
+</library>

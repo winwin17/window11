@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp12" ng-controller="myctrl8">
+<input type="text" ng-model="itname" placeholder="enter the item name"><br>
+<input type="text" ng-model="qt" placeholder="enter the quantity">
+<button ng-click="addItem()">Add item </button>
+<ul>
+<li ng-repeat="i in arr">Item:{{i.name}}-Quantity:{{i.quantity}} <button ng-click="remove($index)">Remove item</button></li>
+</ul>
+
+</body>
+<script>
+var app=angular.module('myapp12',[]);
+app.controller('myctrl8',function($scope){
+$scope.arr=[];
+$scope.addItem=function(){
+	if($scope.itname && $scope.qt)
+	{
+		$scope.arr.push({name:$scope.itname,quantity:$scope.qt});
+		$scope.itname="";
+		$scope.qt="";
+	}
+	else
+	{
+		alert('do smthing');
+	}	
+};
+
+$scope.remove=function(index){
+	$scope.arr.splice(index,1);
+};
+
+});
+
+</script>
+
+</html>

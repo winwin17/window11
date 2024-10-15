@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<company>
+<employee>
+<name>SUBIKSHA</name>
+<id>1234</id>
+<department>IT</department>
+<address>123 Elm Street</address>
+<salary> 500000</salary>
+</employee>
+<employee>
+<name>DHAN</name>
+<id>5678</id>
+<department>HR</department>
+</employee>
+<employee>
+<id>9101</id>
+<department>KANIKA</department>
+<address>456 Oak Avenue</address>
+</employee>
+</company>

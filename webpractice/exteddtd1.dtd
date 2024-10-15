@@ -1,0 +1,13 @@
+<!ELEMENT weather(date,city,state,country,temp)>
+<!ELEMENT date(#PCDATA)>
+<!ELEMENT city(#PCDATA)>
+<!ELEMENT state(#PCDATA)>
+<!ELEMENT country(#PCDATA)>
+<!ELEMENT temp(high,low,mrng,aft,eve)>
+<!ELEMENT high(#PCDATA)>
+<!ATTLIST high scale CDATA #REQUIRED>
+<!ELEMENT low(#PCDATA)>
+<!ATTLIST low scale CDATA #REQUIRED>
+<!ELEMENT mrng(#PCDATA)>
+<!ELEMENT aft(#PCDATA)>
+<!ELEMENT eve(#PCDATA)>

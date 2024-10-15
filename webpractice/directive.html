@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <!-- Using the custom directive -->
+    <my-message></my-message>
+
+    <script>
+        // Define AngularJS app
+        var app = angular.module('myApp', []);
+
+        // Create a simple custom directive
+        app.directive('myMessage', function() {
+            return {
+                restrict: 'E',  // Restrict it to be used as an element
+                template: '<h1>Hello! This is a custom message.</h1>'
+            };
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!ELEMENT library(book+,member+)>
+<!ATTLIST library name CDATA #REQUIRED
+				  established CDATA #REQUIRED
+				  location CDATA #REQUIRED>
+<!ELEMENT book(title,year,price,publisher)>
+<!ATTLIST book isbn CDATA #REQUIRED
+			   author CDATA #REQUIRED
+			   genre CDATA #REQUIRED
+			   available (true|false) #REQUIRED
+			   edition CDATA #IMPLIED>
+<!ELEMENT title(#PCDATA)>
+<!ELEMENT year(#PCDATA)>
+<!ELEMENT price(#PCDATA)>
+<!ATTLIST price currency CDATA #REQUIRED>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST publisher country CDATA #REQUIRED>
+<!ELEMENT member(borrowedBooks?)>
+<!ATTLIST member id CDATA #REQUIRED
+		  name CDATA #REQUIRED
+		  membership CDATA #REQUIRED
+		  active CDATA #REQUIRED
+		  joindate CDATA #REQUIRED>
+<!ELEMENT borrowedBooks(bookref+)>
+<!ELEMENT bookref EMPTY>
+<!ATTLIST bookref isbn CDATA #REQUIRED>
+

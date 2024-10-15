@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Service component</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp4" ng-controller="myctrl4">
+<p>{{result}}</p>
+<p>{{answer}}</p>
+</div>
+<script>
+var mapp=angular.module("myapp4",[]);
+
+mapp.service("myservice1",function(){
+  this.ans=function(n){
+  var result=[];
+     for(var i=0;i<n;i++)
+	 {
+		result.push(i);
+	 }
+	 return result.join(', ');
+  };
+});
+mapp.value("name","subiksha");
+mapp.controller("myctrl4",function($scope,myservice1,name){
+$scope.result=myservice1.ans(10);
+$scope.answer=name;
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>click operation</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp2" ng-controller="myctrl2">
+<h1 ng-click="changename()">{{fname}}</h1>
+</div>
+<script>
+var ap=angular.module("myapp2",[]);
+ap.controller("myctrl2",function($scope){
+$scope.fname="subiksha";
+$scope.changename=function(){
+$scope.fname="kanika";
+return fname;
+}
+});
+</script>
+</body>
+</html>

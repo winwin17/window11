@@ -1,0 +1,27 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp12">
+<mydir></mydir>
+<div mydir2></div>
+</body>
+<script>
+var app=angular.module('myapp12',[]);
+app.directive('mydir',function(){
+	return{
+	restrict:'E',
+	template:'<h1>hi this is yoyo</h1>'
+	};
+});
+
+app.directive('mydir2',function(){
+	return{
+		restrict:'A',
+		link:function(scope,element){
+		element.text('Hi guyss');
+		}
+	};
+});
+</script>
+</html>

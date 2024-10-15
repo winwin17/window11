@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE weather SYSTEM "exteddtd1.dtd">
+<weather>
+<date>1/2/2024</date>
+<city>NY</city>
+<state> TN</state>
+<temp>
+<high sclae="F">103</high>
+<low sclae="F">10</low>
+<mrng>party</mrng>
+<aft>sunny</aft>
+<eve>cloudy</eve>
+</temp>
+</weather>

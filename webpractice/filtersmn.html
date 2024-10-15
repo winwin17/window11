@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp44" ng-controller="myctrl98">
+<p>{{answer | uppercase}}</p>
+<p>{{answer | lowercase}}</p>
+<p>{{cd | date:'fullDate'}}</p>
+<p>{{cd | date:'yyyy-mm-dd'}}</p>
+<ul>
+<li ng-repeat="i in arr|limitTo:2">{{i}}</li>
+</ul>
+<input type="text" ng-model="searchText" placeholder="type here..">
+<ul>
+<li ng-repeat="i in arr|filter:searchText">{{i}}</li>
+</ul>
+<ul>
+<li ng-repeat="i in arr2 | orderBy:'age'">{{i.name}},{{i.age}}</li>
+</ul>
+<p>{{arr2 |json}}</p>
+<p>{{num | number:2}}</p>
+<p>{{num | currency:"$"}}</p>
+<script>
+var app=angular.module('myapp44',[]);
+app.controller('myctrl98',function($scope){
+	$scope.answer='subiksha';
+	$scope.cd=new Date();
+	$scope.arr=["apple","orange","mangp","custard","tomato"];
+	$scope.arr2=[
+	{name:"subi",age:20},
+	{name:"kani",age:15}
+	];
+	$scope.num=123456.7609;
+});
+</script>
+</body>
+</html>

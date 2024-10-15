@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp6" ng-controller="myctrl6">
+<p>{{ result | reverse}}</p>
+</div>
+<script>
+var myapp=angular.module("myapp6",[]);
+myapp.filter("reverse",function(){
+return function(input)
+{
+    return input.split('').reverse().join('');
+};
+});
+
+myapp.controller("myctrl6",function($scope){
+  $scope.result="subiksha";
+});
+
+</script>
+</body>
+</html>

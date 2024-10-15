@@ -1,0 +1,64 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp8" ng-controller="myctrl9">
+<input type="text" ng-model="item" placeholder="enter the item"><br>
+<input type="text" ng-model="qty" placeholder="enter the quantity"><br>
+<button ng-click="addItem()">Additem</button>
+<ul>
+<li ng-repeat="i in arr">Item : {{i.name}} - Quantity:{{i.quantity}} <button ng-click="remove($index)">Remove</button></li> 
+</ul>
+</body>
+<script>
+var app=angular.module('myapp8',[]);
+app.service('myservice',function(){
+var arr=[];
+this.addItem=function(it){
+arr.push(it);
+};
+this.removeItem=function(index){
+	arr.splice(index,1);
+};
+this.getItems=function(){
+	return arr;
+};
+});
+
+app.factory('myfact',function(){
+	var arr=[];
+	return{
+	addItem:function(it){
+		arr.push(it);
+	},
+	removeItem:function(index){
+		arr.splice(index,1);
+	},
+	getItems:function(){
+		return arr;
+	}
+});
+
+app.controller('myctrl9',function($scope,myservice){
+$scope.arr=myservice.getItems();
+$scope.addItem=function(){
+  if($scope.item && $scope.qty)
+  {
+	  myservice.addItem({name:$scope.item , quantity:$scope.qty});
+	  console.log(myservice.getItems());
+	  $scope.item="";
+	  $scope.qty="";
+  }
+  else
+  {
+	alert('failed');
+  }
+};
+$scope.remove=function(index){
+myservice.removeItem(index);
+};
+});
+
+
+</script>
+</html>
